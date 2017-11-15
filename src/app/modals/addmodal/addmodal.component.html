@@ -1,0 +1,26 @@
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add New Book</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Please fill in the required fields</h3>
+        <div *ngIf="Errors" class="alert alert-danger">
+            <strong>Error!</strong> {{Errors}}
+        </div>
+        <h2>*Author</h2>
+        <input type="text" [(ngModel)]="Book.Author" class="form-control" placeholder="Author" aria-describedby="basic-addon1">
+        <h2>*Date</h2>
+        <p-calendar [(ngModel)]="Book.Date" placeholder="Date"></p-calendar>        
+        <h2>*Title</h2>
+        <input type="text" [(ngModel)]="Book.Title" class="form-control" placeholder="Title" aria-describedby="basic-addon1">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button (click)="addNewBook()" type="button" class="btn btn-primary">+Add</button>
+      </div>
+    </div>
+  </div>
+</div>
